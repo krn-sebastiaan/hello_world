@@ -1,0 +1,14 @@
+name: compile
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  compile:
+    uses: krn-sebastiaan/mmojo-workflows/.github/workflows/compile.yml@main
+    secrets: inherit
