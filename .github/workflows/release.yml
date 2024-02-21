@@ -1,11 +1,19 @@
-name: release
+name: Release mMojo
 
 on:
   push:
     tags:
-      - '[0-9]+.[0-9]+.[0-9]+'
+      - '*.*.*'
 
 jobs:
   release:
-    uses: krn-sebastiaan/mmojo-workflows/.github/workflows/release.yml@main
-    secrets: inherit
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release mMojo
+        uses: krn-sebastiaan/actions/release@main
+        with:
+          krn-core-repository-url: 'https://krn-sebastiaan.github.io/mmojo-repositories/demo-repositories.xml'
+          build-arguments: '-Dlog_level=debug'
+          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}

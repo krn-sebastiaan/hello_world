@@ -1,0 +1,9 @@
+#%text_encoding=utf8
+_package user
+
+_block
+	_local greet << greeting.new(:formal).say_hello(_false)
+
+	sw:write_with_spaces(sw:date_time.now(), greet, "Smallworld")
+_endblock
+$

@@ -1,4 +1,4 @@
-name: compile
+name: Compile mMojo
 
 on:
   push:
@@ -10,5 +10,11 @@ on:
 
 jobs:
   compile:
-    uses: krn-sebastiaan/mmojo-workflows/.github/workflows/compile.yml@main
-    secrets: inherit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compile mMojo
+        uses: krn-sebastiaan/actions/compile@main
+        with:
+          krn-core-repository-url: 'https://krn-sebastiaan.github.io/mmojo-repositories/demo-repositories.xml'
+          build-arguments: '-Dlog_level=debug'
+          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}

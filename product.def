@@ -1,9 +1,13 @@
-example_product layered_product
+hello_world layered_product
 
 title
-	Example Product
+	Hello World
 end
 
 description
-	This is the description of an example product
+	A product that says Hello (Small)world
+end
+
+requires
+	greeting
 end

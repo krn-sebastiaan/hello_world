@@ -1,0 +1,9 @@
+hello_world	1
+
+description
+	A module that says Hello (Small)world
+end
+
+requires
+	greeting
+end
